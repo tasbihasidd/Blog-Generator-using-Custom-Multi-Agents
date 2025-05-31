@@ -27,7 +27,7 @@ st.title("Blog Generator with Multi-Agents")
 st.write("Enter a topic to generate summarized blogs based on online sources.")
 
 # User input
-topic = st.text_input("Enter a topic", "")
+topic = st.text_input("Enter your topic", "")
 outline = st.text_area("Enter an outline (optional):", height=150)
 
 
@@ -38,7 +38,7 @@ if topic and outline:
     urls = search_agent.search(topic)
 
     if not urls:
-        st.error("No URLs found for the given topic. Please try another topic.")
+        st.error("No URLs found for this given topic. Please try another topic.")
     else:
         st.success(f"Found {len(urls)} sources. Processing...")
         summaries = []
